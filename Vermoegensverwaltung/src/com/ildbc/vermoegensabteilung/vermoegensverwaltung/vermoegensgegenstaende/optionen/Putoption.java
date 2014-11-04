@@ -1,33 +1,12 @@
-package model.com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.optionen;
+package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.optionen;
 
+public class Putoption extends Option {
 
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
-
-public class Putoption extends Option
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public Putoption(){
+	public Putoption() {
 		super();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	public void put() {
-		// TODO implement me	
 	}
-	
-}
 
+}

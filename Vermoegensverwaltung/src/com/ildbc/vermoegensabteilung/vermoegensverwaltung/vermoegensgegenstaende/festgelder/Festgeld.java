@@ -1,62 +1,37 @@
-package model.com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.festgelder;
-import model.com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
+package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.festgelder;
 
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
+ * 
  * @generated
  */
 
-public class Festgeld extends Vermoegensgegenstand
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
+public class Festgeld extends Vermoegensgegenstand {
+
 	private final long betrag = 0L;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
+
 	private final int laufzeit = 0;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
+
 	private final long zins = 0L;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public Festgeld(){
+
+	public Festgeld() {
 		super();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	public long getEndwert() {
-		// TODO implement me
-		return 0L;	
+		return 0L;
 	}
-	
-}
 
+	@Override
+	public String getTyp() {
+		return null;
+	}
+
+	@Override
+	public long getZeitwert(int datum) {
+		return 0;
+	}
+
+}

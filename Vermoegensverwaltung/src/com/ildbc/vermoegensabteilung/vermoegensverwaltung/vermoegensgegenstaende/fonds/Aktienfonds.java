@@ -1,22 +1,21 @@
-package model.com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.fonds;
+package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.fonds;
 
+public class Aktienfonds extends Fonds {
 
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
-
-public class Aktienfonds extends Fonds
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public Aktienfonds(){
+	public Aktienfonds() {
 		super();
 	}
 
-}
+	@Override
+	public String getTyp() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
+	@Override
+	public long getZeitwert(int datum) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
