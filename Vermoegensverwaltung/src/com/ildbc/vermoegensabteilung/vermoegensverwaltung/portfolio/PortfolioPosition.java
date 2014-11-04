@@ -7,19 +7,19 @@ public  interface PortfolioPosition
 {
 	
 	
-	public getAnzahl() ;
+	public int getAnzahl() ;
 	
 	
 	
-	public getName() ;
+	public String getName() ;
 	
 	
 	
-	public getTyp() ;
+	public String getTyp() ;
 	
 	
 	
-	public getZeitwert(int zeit) ;
+	public long getZeitwert(int zeit) ;
 	
 	
 }
