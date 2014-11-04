@@ -1,79 +1,29 @@
-package model.com.ildbc.vermoegensabteilung.vermoegensverwaltung.portfolio;
-import java.util.LinkedList;
+package com.ildbc.vermoegensabteilung.vermoegensverwaltung.portfolio;
+
 import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
 
+public class Portfolio {
 
+	public final List<PortfolioPosition> vermoegenswerte;
 
-
-public class Portfolio
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public final Set<PortfolioPosition> vermoegenswert = new HashSet<PortfolioPosition>();
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public Portfolio(){
-		super();
+	public Portfolio(List<PortfolioPosition> vermoegenswerte) {
+		this.vermoegenswerte = vermoegenswerte;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	public List<PortfolioPosition> getVermoegenswerte() {
-		// TODO implement me
-		return null;	
+		return null;
 	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public long getGesamtinvestition() {
-		// TODO implement me
-		return 0L;	
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public long getZeitwert(int datum) {
-		// TODO implement me
-		return 0L;	
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public long getBilanz() {
-		// TODO implement me
-		return 0L;	
-	}
-	
-}
 
+	public long getGesamtinvestition() {
+		return 0L;
+	}
+
+	public long getZeitwert(int datum) {
+		return 0L;
+	}
+
+	public long getBilanz() {
+		return 0L;
+	}
+
+}
