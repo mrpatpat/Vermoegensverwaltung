@@ -2,4 +2,6 @@ package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaend
 
 public class ImmobilieExistiertException extends Exception {
 
+	private static final long serialVersionUID = 1L;
+
 }
