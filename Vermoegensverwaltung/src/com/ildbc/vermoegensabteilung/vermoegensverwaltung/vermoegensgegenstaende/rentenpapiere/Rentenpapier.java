@@ -7,7 +7,7 @@ public class Rentenpapier extends Festgeld implements Handelbar {
 
 	private long kurs;
 
-	public Rentenpapier(int kaufdatum, long kaufpreis, String name, int anzahl, int laufzeit, long zins, long kurs) {
+	public Rentenpapier(int kaufdatum, long kaufpreis, String name, int anzahl, int laufzeit, double zins, long kurs) {
 		super(kaufdatum, kaufpreis, name, anzahl, laufzeit, zins);
 		this.kurs = kurs;
 	}

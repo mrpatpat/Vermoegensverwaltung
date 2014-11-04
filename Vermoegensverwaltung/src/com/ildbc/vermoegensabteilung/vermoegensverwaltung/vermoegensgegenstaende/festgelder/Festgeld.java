@@ -5,9 +5,9 @@ import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende
 public class Festgeld extends Vermoegensgegenstand {
 
 	private final int laufzeit;
-	private final long zins;
+	private final double zins;
 
-	public Festgeld(int kaufdatum, long kaufpreis, String name, int anzahl, int laufzeit, long zins) {
+	public Festgeld(int kaufdatum, long kaufpreis, String name, int anzahl, int laufzeit, double zins) {
 		super(kaufdatum,kaufpreis,name,anzahl);
 		this.laufzeit = laufzeit;
 		this.zins = zins;
