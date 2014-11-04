@@ -1,24 +1,18 @@
 package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.fonds;
 
+import java.util.List;
 
-public class Rentenfonds extends Fonds
-{
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.rentenpapiere.Rentenpapier;
 
-	public Rentenfonds(){
-		super();
+public class Rentenfonds extends Fonds<Rentenpapier> {
+
+	public Rentenfonds(int kaufdatum, long kaufpreis, String name, int anzahl, List<Rentenpapier> rentenpapiere) {
+		super(kaufdatum, kaufpreis, name, anzahl, rentenpapiere);
 	}
 
 	@Override
 	public String getTyp() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public long getZeitwert(int datum) {
-		// TODO Auto-generated method stub
-		return 0;
+		return "Rentenfonds";
 	}
 
 }
-

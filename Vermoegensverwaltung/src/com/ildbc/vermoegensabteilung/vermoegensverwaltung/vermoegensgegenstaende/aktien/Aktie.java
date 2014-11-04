@@ -6,33 +6,35 @@ public class Aktie extends Vermoegensgegenstand implements Handelbar {
 
 	private long kurs;
 
-	public Aktie() {
+	public Aktie(int kaufdatum, long kaufpreis, String name, int anzahl,long kurs) {
+		super(kaufdatum,kaufpreis,name,anzahl);
+		this.kurs = kurs;
 	}
-
-	public void verkaufen() {
+	
+	public void setKurs(long kurs){
+		this.kurs = kurs;
 	}
 
 	public long getZeitwert(int zeit) {
-		return 0L;
-	}
-
-	public int getAnzahl() {
-		return 0;
-	}
-
-	public String getName() {
-		return "";
+		return getKurs();
 	}
 
 	public long getKurs() {
-		return 0L;
+		return kurs;
 	}
 
+	@Override
 	public String getTyp() {
-		return "";
+		return "Aktie";
+	}
+
+	public void verkaufen() {
+		//nicht angegeben, aber gefordert
 	}
 
 	public void kaufen() {
+		//nicht angegeben, aber gefordert
 	}
+
 
 }

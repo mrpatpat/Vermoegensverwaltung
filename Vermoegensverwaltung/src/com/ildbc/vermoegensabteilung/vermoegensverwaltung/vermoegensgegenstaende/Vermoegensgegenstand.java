@@ -1,36 +1,37 @@
 package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende;
 
-import com.ildbc.vermoegensabteilung.vermoegensverwaltung.portfolio.PortfolioPosition;
+public abstract class Vermoegensgegenstand {
 
-public abstract class Vermoegensgegenstand implements PortfolioPosition {
+	private final int kaufdatum;
+	private final long kaufpreis;
+	private final String name;
+	private final int anzahl;
 
-	private final int kaufdatum = 0;
-
-	private final long kaufpreis = 0L;
-
-	private final String name = "";
-
-	public int anzahl;
-
-	public Vermoegensgegenstand() {
+	public Vermoegensgegenstand(int kaufdatum, long kaufpreis, String name, int anzahl) {
+		this.kaufdatum = kaufdatum;
+		this.kaufpreis = kaufpreis;
+		this.name = name;
+		this.anzahl = anzahl;
 	}
 
 	public int getKaufdatum() {
-		return 0;
+		return kaufdatum;
 	}
 
 	public long getKaufpreis() {
-		return 0L;
+		return kaufpreis;
 	}
 
 	public String getName() {
-		return "";
+		return name;
 	}
 
 	public abstract long getZeitwert(int datum);
 
+	public abstract String getTyp();
+
 	public int getAnzahl() {
-		return 0;
+		return anzahl;
 	}
 
 }

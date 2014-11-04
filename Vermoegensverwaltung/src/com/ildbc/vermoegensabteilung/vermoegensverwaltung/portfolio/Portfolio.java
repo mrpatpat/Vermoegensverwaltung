@@ -2,16 +2,18 @@ package com.ildbc.vermoegensabteilung.vermoegensverwaltung.portfolio;
 
 import java.util.List;
 
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
+
 public class Portfolio {
 
-	public final List<PortfolioPosition> vermoegenswerte;
+	private final List<Vermoegensgegenstand> vermoegenswerte;
 
-	public Portfolio(List<PortfolioPosition> vermoegenswerte) {
+	public Portfolio(List<Vermoegensgegenstand> vermoegenswerte) {
 		this.vermoegenswerte = vermoegenswerte;
 	}
 
-	public List<PortfolioPosition> getVermoegenswerte() {
-		return null;
+	public List<Vermoegensgegenstand> getVermoegenswerte() {
+		return this.vermoegenswerte;
 	}
 
 	public long getGesamtinvestition() {

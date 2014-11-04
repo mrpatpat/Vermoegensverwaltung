@@ -1,47 +1,55 @@
 package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.optionen;
+
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.aktien.Aktie;
 
-class Option extends Vermoegensgegenstand
-{
+abstract class Option extends Vermoegensgegenstand {
 
-	private int startdatum;
-	
-	private int dauer;
-	
-	private long ausuebungspreis;
-	
-	public Aktie basiswert;
+	private final int startdatum;
 
-	public Option(){
-		super();
+	private final int dauer;
+
+	private final long ausuebungspreis;
+
+	public final Aktie basiswert;
+
+	public Option(int kaufdatum, long kaufpreis, String name, int anzahl, int startdatum, int dauer, int ausuebungspreis, Aktie basiswert) {
+		super(kaufdatum, kaufpreis, name, anzahl);
+		this.startdatum = startdatum;
+		this.dauer = dauer;
+		this.ausuebungspreis = ausuebungspreis;
+		this.basiswert = basiswert;
+
 	}
-	
+
 	public int getStartdatum() {
-		return 0;	
-	}
-	
-	public int getDauer() {
-		return 0;	
-	}
-	
-	public long getAusuebungspreis() {
-		return 0L;	
-	}
-	
-	public Aktie getBasiswert() {
-		return null;	
+		return startdatum;
 	}
 
-	@Override
-	public String getTyp() {
-		return null;
+	public int getDauer() {
+		return dauer;
+	}
+
+	public long getAusuebungspreis() {
+		return ausuebungspreis;
+	}
+
+	public Aktie getBasiswert() {
+		return basiswert;
 	}
 
 	@Override
 	public long getZeitwert(int datum) {
-		return 0;
+		
+		if(datum-startdatum<=0){
+			return 0;
+		} else if (datum-(startdatum+dauer)>=0){
+			return 0;
+		} else {
+			return getZeitwertInAusuebungsphase();
+		}
 	}
 	
-}
+	abstract long getZeitwertInAusuebungsphase();
 
+}

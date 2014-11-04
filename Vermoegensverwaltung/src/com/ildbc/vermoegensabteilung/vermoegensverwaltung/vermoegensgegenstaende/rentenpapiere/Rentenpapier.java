@@ -1,43 +1,39 @@
 package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.rentenpapiere;
 
-import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.festgelder.Festgeld;
-import com.ildbc.vermoegensabteilung.vermoegensverwaltung.portfolio.Portfolio;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Handelbar;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.festgelder.Festgeld;
 
 public class Rentenpapier extends Festgeld implements Handelbar {
 
-	public Portfolio portfolio;
-
 	private long kurs;
 
-	public Rentenpapier() {
-		super();
+	public Rentenpapier(int kaufdatum, long kaufpreis, String name, int anzahl, int laufzeit, long zins, long kurs) {
+		super(kaufdatum, kaufpreis, name, anzahl, laufzeit, zins);
+		this.kurs = kurs;
 	}
 
-	public long getZeitwert(int zeit) {
-		return 0L;
-	}
-
-	public int getAnzahl() {
-		return 0;
+	@Override
+	public long getEndwert() {
+		return this.getKurs();
 	}
 
 	public long getKurs() {
-		return 0L;
+		return kurs;
 	}
 
 	public void verkaufen() {
-	}
-
-	public String getName() {
-		return "";
 	}
 
 	public void kaufen() {
 	}
 
 	public String getTyp() {
-		return "";
+		return "Rentenpapier";
+	}
+
+	@Override
+	public void setKurs(long kurs) {
+		this.kurs = kurs;
 	}
 
 }

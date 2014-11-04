@@ -1,21 +1,18 @@
 package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.fonds;
 
-public class Aktienfonds extends Fonds {
+import java.util.List;
 
-	public Aktienfonds() {
-		super();
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.aktien.Aktie;
+
+public class Aktienfonds extends Fonds<Aktie> {
+
+	public Aktienfonds(int kaufdatum, long kaufpreis, String name, int anzahl, List<Aktie> aktien) {
+		super(kaufdatum, kaufpreis, name, anzahl, aktien);
 	}
 
 	@Override
 	public String getTyp() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public long getZeitwert(int datum) {
-		// TODO Auto-generated method stub
-		return 0;
+		return "Aktienfonds";
 	}
 
 }

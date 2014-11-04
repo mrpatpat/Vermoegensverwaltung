@@ -2,36 +2,35 @@ package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaend
 
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 
-/**
- * <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
- * @generated
- */
-
 public class Festgeld extends Vermoegensgegenstand {
 
-	private final long betrag = 0L;
+	private final int laufzeit;
+	private final long zins;
 
-	private final int laufzeit = 0;
-
-	private final long zins = 0L;
-
-	public Festgeld() {
-		super();
+	public Festgeld(int kaufdatum, long kaufpreis, String name, int anzahl, int laufzeit, long zins) {
+		super(kaufdatum,kaufpreis,name,anzahl);
+		this.laufzeit = laufzeit;
+		this.zins = zins;
 	}
 
 	public long getEndwert() {
-		return 0L;
+		
+		double a = 1 + (zins/100d);
+		a = Math.pow(a, laufzeit);
+		a *= getKaufpreis();
+		
+		return (long)a;
+		
 	}
 
 	@Override
 	public String getTyp() {
-		return null;
+		return "Festgeld";
 	}
 
 	@Override
 	public long getZeitwert(int datum) {
-		return 0;
+		return getKaufpreis();
 	}
 
 }
