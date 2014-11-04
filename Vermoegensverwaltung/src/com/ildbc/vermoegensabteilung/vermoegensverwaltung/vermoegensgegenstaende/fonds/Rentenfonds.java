@@ -1,4 +1,4 @@
-package model.com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.fonds;
+package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.fonds;
 
 
 /**
