@@ -1,6 +1,6 @@
 package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende;
 
-interface Handelbar {
+public interface Handelbar {
 
 	public long getKurs();
 
