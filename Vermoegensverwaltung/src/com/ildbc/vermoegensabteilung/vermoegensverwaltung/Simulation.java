@@ -70,5 +70,30 @@ public class Simulation {
 		return new Aktie(kaufdatum, kaufpreis, aktienNamen[aktienName], anzahl,
 				aktienDefinitionen[aktienName][nutzeKurs1 ? 0 : 1]);
 	}
+	
+	//optionen
+	private static final Aktie basfCall = new Aktie(0, 6000,"Basf" , 1, 500);
+	private static final Aktie daimlerPut = new Aktie(0, 4700, "Daimler", 1, 300);
+	private static final Aktie manCall = new Aktie(0, 8800, "MAN", 1, 100);
+	private static final Aktie manPut = new Aktie(0, 8500, "MAN", 1, 200);
+	
+	//Portfolio1
+	private static final Aktie basf = new Aktie(0, 6102, "Basf", 1000, 500);
+	private static final Aktie man = new Aktie(0, 8925, "MAN", 240, 300);
+	//Fonds
+	private static final Aktie fond = new Aktie(0, 58149, "DAX", 300, 100);
+	//Villa
+	private static final Immobilie Villa1(int kaufdatum)
+			throws ImmobilieExistiertException {
+		return new Immobilie(kaufdatum, 1000000, "Villa 1",
+				20);}
+	//Festgeld
+	private static final Festgeld festgeld = new Festgeld(0, 100000, "Festgeld", 1,20, 2);
+	//Optionen
+	private static final Aktie basfCallOption = new Aktie(0, 6000, "Basf", 10000, 500);
+	private static final Aktie manCallOption = new Aktie(0, 8800, "MAN", 5000, 100);
+	private static final Aktie manPutOption = new Aktie(0, 8500, "MAN", 5000, 200);
+	private static final Aktie daimlerPutOption = new Aktie(0, 4700, "MAN", 5000, 300);
+	
 
 }
