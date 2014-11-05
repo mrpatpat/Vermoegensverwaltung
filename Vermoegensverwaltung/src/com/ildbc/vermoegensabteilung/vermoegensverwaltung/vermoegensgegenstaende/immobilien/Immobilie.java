@@ -77,6 +77,10 @@ public class Immobilie extends Vermoegensgegenstand {
 		existierendeImmobilien.add(name);
 	}
 	
+	public static void clear(){
+		existierendeImmobilien = new ArrayList<String>();
+	}
+	
 	/**
 	 * Pruefung ob die Immobilie nur einaml vorhanden ist
 	 * 

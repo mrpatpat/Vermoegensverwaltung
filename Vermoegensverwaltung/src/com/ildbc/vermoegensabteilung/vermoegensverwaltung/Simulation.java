@@ -17,9 +17,36 @@ import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende
 public class Simulation {
 
 	public static void main(String[] args) {
-		System.out.println(createPortfolioA(true).toString());
 		
-		System.out.println(createPortfolioB(true).toString());
+
+		System.out.println(printPortfolio(createPortfolioA(true),"Portfolio 1 - Kurs 1 "));
+		Immobilie.clear();
+		System.out.println(printPortfolio(createPortfolioA(false),"Portfolio 1 - Kurs 2 "));
+		Immobilie.clear();
+		System.out.println(printPortfolio(createPortfolioB(true),"Portfolio 2 - Kurs 1 "));
+		Immobilie.clear();
+		System.out.println(printPortfolio(createPortfolioB(false),"Portfolio 2 - Kurs 2 "));
+		Immobilie.clear();
+		
+	}
+
+	private static String printPortfolio(Portfolio A,String name){
+		String s = new String ("");
+		s+=name + " - Kaufwert: " + portfolioWorth(A);				
+		return s;
+	}
+	private static long portfolioWorth(Portfolio portfo) {
+		long aktienWert=0;
+		long portfolioWert =0;
+		for (int i = 0; i < portfo.getVermoegenswerte().size(); i++) {
+			//if (A.getVermoegenswerte().get(i).getTyp() == "Aktie") 
+				
+				aktienWert = (portfo.getVermoegenswerte().get(i).getAnzahl() * portfo
+						.getVermoegenswerte().get(i).getKaufpreis());
+				portfolioWert +=aktienWert;
+		}
+		
+		return portfolioWert;
 	}
 
 	private static Portfolio createPortfolioA(boolean istKurs1) {
@@ -97,6 +124,4 @@ public class Simulation {
 		return new Portfolio(vg);
 	}
 
-	
-	
 }
