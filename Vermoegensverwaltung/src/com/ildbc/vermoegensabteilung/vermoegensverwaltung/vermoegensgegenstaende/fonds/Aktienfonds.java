@@ -4,6 +4,16 @@ import java.util.List;
 
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.aktien.Aktie;
 
+/**
+ * Ansammlung der Aktien
+ * Klasse Aktienfonds
+ * erbt von Fonds
+ * 
+ * @author Adrian, Marcel und Felix
+ *
+ * date 5.11.2014
+ */
+
 public class Aktienfonds extends Fonds<Aktie> {
 
 	public Aktienfonds(int kaufdatum, long kaufpreis, String name, int anzahl, List<Aktie> aktien) {
