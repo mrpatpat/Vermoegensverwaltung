@@ -17,6 +17,17 @@ public class Festgeld extends Vermoegensgegenstand {
 
 	private final int laufzeit;
 	private final double zins;
+	
+	/**
+	 * Konstuktuer mit den Eigenschaften der Vermoegenstand
+	 * 
+	 * @param kaufdatum
+	 * @param kaufpreis
+	 * @param name
+	 * @param anzahl
+	 * @param laufzeit
+	 * @param zins
+	 */
 
 	public Festgeld(int kaufdatum, long kaufpreis, String name, int anzahl, int laufzeit, double zins) {
 		super(kaufdatum,kaufpreis,name,anzahl);
@@ -24,6 +35,12 @@ public class Festgeld extends Vermoegensgegenstand {
 		this.zins = zins;
 	}
 
+	/**
+	 * Gibt den Endwert an des Festgeldes
+	 * 
+	 * @return long
+	 */
+	
 	public long getEndwert() {
 		
 		double a = 1 + (zins/100d);
@@ -32,12 +49,20 @@ public class Festgeld extends Vermoegensgegenstand {
 		
 		return (long)a;
 		
-	}
+	} 
+	
+	/**
+	 * Gibt den Typ an
+	 */
 
 	@Override
 	public String getTyp() {
 		return "Festgeld";
 	}
+	
+	/**
+	 * Zeitwert wird angegeben
+	 */
 
 	@Override
 	public long getZeitwert(int datum) {
