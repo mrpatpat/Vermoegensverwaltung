@@ -2,6 +2,16 @@ package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaend
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Handelbar;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 
+/**
+ * Representation einer Aktien 
+ * und erben Eigenschaften von der Klasse Vermoegensgegenstand
+ * das Interface was benutz ist fuer die Klasse ist Handelbar
+ *
+ * 
+ * @author Adrian, Marcel und Felix
+ * date 5.11.2014
+ */
+
 public class Aktie extends Vermoegensgegenstand implements Handelbar {
 
 	private long kurs;
