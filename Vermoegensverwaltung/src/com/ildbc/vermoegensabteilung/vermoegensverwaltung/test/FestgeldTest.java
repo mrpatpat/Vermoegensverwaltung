@@ -8,6 +8,7 @@ import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende
 
 public class FestgeldTest {
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void test() {
 		Festgeld b = new Festgeld(0, 100000, "Festgeld", 1,20, 2);
@@ -22,7 +23,10 @@ public class FestgeldTest {
 		assertEquals(1, b.getAnzahl());
 		assertEquals(1, c.getAnzahl());
 		
-		assertArrayEquals(20, b.);
+		//wieso??
+		//assertEquals(2.00, b.getZins());
+		//assertEquals(2.00, c.getZins());
+		
 	}
 
 }

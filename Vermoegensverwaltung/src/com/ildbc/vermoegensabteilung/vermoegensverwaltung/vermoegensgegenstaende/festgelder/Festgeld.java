@@ -70,13 +70,13 @@ public class Festgeld extends Vermoegensgegenstand {
 
 	public double getZins() {
 
-		return zins;
+		return this.zins;
 
 	}
 
 	public int getLaufzeit() {
 		
-		return laufzeit;
+		return this.laufzeit;
 	}
 
 }
