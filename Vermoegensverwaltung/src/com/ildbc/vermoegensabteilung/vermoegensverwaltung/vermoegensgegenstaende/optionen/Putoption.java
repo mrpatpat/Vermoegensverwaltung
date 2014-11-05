@@ -2,6 +2,16 @@ package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaend
 
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.aktien.Aktie;
 
+/**
+ * Klasse Putoption erbt von Option
+ * Prüft ob der aktuele Kurs niedriger ist 
+ * um die Putoption zu ziehen
+ * 
+ * @author Adrian, Marcel und Felix
+ *
+ *date 5.11.2014
+ */
+
 public class Putoption extends Option {
 
 	public Putoption(int kaufdatum, long kaufpreis, String name, int anzahl, int startdatum, int dauer, int ausuebungspreis, Aktie basiswert) {
