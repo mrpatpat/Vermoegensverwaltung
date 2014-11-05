@@ -19,13 +19,13 @@ public class Simulation {
 	public static void main(String[] args) {
 		
 
-		System.out.println(printPortfolio(createPortfolioA(true),"Portfolio 1 - Kurs 1 ",0));
+		System.out.println(printPortfolio(createPortfolioA(true),"Portfolio 1 - Jahr 0 ",0));
 		Immobilie.clear();
-		System.out.println(printPortfolio(createPortfolioA(false),"Portfolio 1 - Kurs 2 ",1));
+		System.out.println(printPortfolio(createPortfolioA(false),"Portfolio 1 - Jahr 1 ",1));
 		Immobilie.clear();
-		System.out.println(printPortfolio(createPortfolioB(true),"Portfolio 2 - Kurs 1 ",0));
+		System.out.println(printPortfolio(createPortfolioB(true),"Portfolio 2 - Jahr 0 ",0));
 		Immobilie.clear();
-		System.out.println(printPortfolio(createPortfolioB(false),"Portfolio 2 - Kurs 2 ",1));
+		System.out.println(printPortfolio(createPortfolioB(false),"Portfolio 2 - Jahr 1 ",1));
 		Immobilie.clear();
 		
 	}
