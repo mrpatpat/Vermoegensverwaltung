@@ -15,10 +15,24 @@ import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende
  */
 
 public class Rentenfonds extends Fonds<Rentenpapier> {
+	
+	/**
+	 * Konstrukteur für Rentenfonds
+	 * 
+	 * @param kaufdatum
+	 * @param kaufpreis
+	 * @param name
+	 * @param anzahl
+	 * @param rentenpapiere
+	 */
 
 	public Rentenfonds(int kaufdatum, long kaufpreis, String name, int anzahl, List<Rentenpapier> rentenpapiere) {
 		super(kaufdatum, kaufpreis, name, anzahl, rentenpapiere);
 	}
+	
+	/**
+	 * Rentenfonds wir als Typ zurück gegeben
+	 */
 
 	@Override
 	public String getTyp() {
