@@ -5,6 +5,17 @@ import java.util.List;
 
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 
+/**
+ * Klasse Immobilien erbt von Vermoegensgegenstand
+ * mit einer statischen Liste wird eine Liste generiet
+ * dadurch kann man nur eine spezifische Immobilie 
+ * es gibt keine doppelt
+ * 
+ * @author Adrian, Marcel und Felix
+ *
+ *date 5.11.2014
+ */
+
 public class Immobilie extends Vermoegensgegenstand {
 
 	private static final int MAX_ANZAHL_INSTANZEN = 1;
