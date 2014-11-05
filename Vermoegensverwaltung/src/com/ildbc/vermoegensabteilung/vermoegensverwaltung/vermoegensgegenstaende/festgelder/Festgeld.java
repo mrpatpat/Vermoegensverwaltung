@@ -2,6 +2,17 @@ package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaend
 
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 
+/**
+ * Representation des Festgeld 
+ * Klasse erbt von Vermoegensgegenstand
+ * Kapital * (1+p/100)^laufzeit
+ * Endwert wird erst am Ende der Laufzeit angegeben
+ * 
+ * @author Adrian, Marcel und Felix
+ * 
+ *date 5.11.2014
+ */
+
 public class Festgeld extends Vermoegensgegenstand {
 
 	private final int laufzeit;
