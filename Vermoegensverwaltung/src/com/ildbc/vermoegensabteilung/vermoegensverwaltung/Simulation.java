@@ -46,5 +46,13 @@ public class Simulation {
 	private static final Aktie manPutOption = new Aktie(0, 8500, "MAN", 5000, 200);
 	private static final Aktie daimlerPutOption = new Aktie(0, 4700, "MAN", 5000, 300);
 	
+	//Portfolio2
+	private static final Aktie basf2 = new Aktie(0, 6102, "Basf", 2000, 500);
+	private static final Aktie man2 = new Aktie(0, 8925, "MAN", 240, 100);
+	private static final Aktie siemens = new Aktie(0, 9710, "MAN", 400, 0);
+	private static final Aktie vw = new Aktie(0, 11032, "MAN", 600, 0);
+	
 
+	
+	
 }
