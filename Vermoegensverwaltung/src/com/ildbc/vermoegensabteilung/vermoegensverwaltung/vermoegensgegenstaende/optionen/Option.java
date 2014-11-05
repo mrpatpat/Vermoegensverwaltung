@@ -3,6 +3,15 @@ package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaend
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.aktien.Aktie;
 
+/**
+ * Option wird als abstrakte Klasse erstellt
+ * erbt von Vermoegensgegenstand
+ * 
+ * @author Adrian, Marcel und Felix
+ *
+ *date 5.11.2014
+ */
+
 abstract class Option extends Vermoegensgegenstand {
 
 	private final int startdatum;
