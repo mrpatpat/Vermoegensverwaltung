@@ -23,6 +23,16 @@ public class Immobilie extends Vermoegensgegenstand {
 	private static List<String> existierendeImmobilien;
 
 	private int abschreibungsdauer;
+	
+	/**
+	 * Konstukteur fuer Immobilie
+	 * 
+	 * @param kaufdatum
+	 * @param kaufpreis
+	 * @param name
+	 * @param abschreibungsdauer
+	 * @throws ImmobilieExistiertException
+	 */
 
 	public Immobilie(int kaufdatum, long kaufpreis, String name, int abschreibungsdauer) throws ImmobilieExistiertException {
 		super(kaufdatum, kaufpreis, name, Immobilie.MAX_ANZAHL_INSTANZEN);
@@ -35,21 +45,44 @@ public class Immobilie extends Vermoegensgegenstand {
 		}
 		
 	}
+	
+	/**
+	 * Typ wird angegeben
+	 */
 
 	@Override
 	public String getTyp() {
 		return "Immobilie";
 	}
+	
+	/**
+	 * Zeitwert der Immobilie ist begrentz und sinkt irgendwann auf 0
+	 */
 
 	@Override
 	public long getZeitwert(int datum) {
 		return getKaufpreis() - (getKaufpreis()/abschreibungsdauer) * (datum - getKaufdatum());
 	}
 
+	/**
+	 * Immobilien Name wird zur Liste dazu gegeben statisch
+	 * 
+	 * und List wird auch auch geprueft auf leere
+	 * 
+	 * @param name
+	 */
+	
 	private static void addImmobilie(String name){
 		listeInitilisieren();
 		existierendeImmobilien.add(name);
 	}
+	
+	/**
+	 * Pruefung ob die Immobilie nur einaml vorhanden ist
+	 * 
+	 * @param name
+	 * @return boolean
+	 */
 
 	private static boolean immobilieExistiert(String name) {
 		listeInitilisieren();
@@ -59,6 +92,10 @@ public class Immobilie extends Vermoegensgegenstand {
 		}
 		return false;
 	}
+	
+	/**
+	 * falls die Liste leer ist wird sie initialisiert
+	 */
 
 	private static void listeInitilisieren() {
 		if(existierendeImmobilien == null){
