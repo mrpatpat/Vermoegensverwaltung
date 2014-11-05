@@ -7,51 +7,95 @@ import com.ildbc.vermoegensabteilung.vermoegensverwaltung.portfolio.Portfolio;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.aktien.Aktie;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.festgelder.Festgeld;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.fonds.Aktienfonds;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.immobilien.Immobilie;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.immobilien.ImmobilieExistiertException;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.optionen.Calloption;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.optionen.Putoption;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.rentenpapiere.Rentenpapier;
 
 public class Simulation {
 
 	public static void main(String[] args) {
-		System.out.println("test");
+		System.out.println(createPortfolioA(true).toString());
+		
+		System.out.println(createPortfolioB(true).toString());
 	}
 
 	private static Portfolio createPortfolioA(boolean istKurs1) {
+
 		List<Vermoegensgegenstand> vg = new ArrayList<Vermoegensgegenstand>();
+
 		vg.add(new Aktie(0, 6102, "BASF", 1000, istKurs1 ? 6127 : 8439));
+		vg.add(new Aktie(0, 8925, "MAN", 240, istKurs1 ? 8824 : 8267));
+
+		List<Aktie> dax = new ArrayList<Aktie>();
+		dax.add(new Aktie(0, 11500, "Münchener Rück", 1, istKurs1 ? 11110
+				: 12030));
+		dax.add(new Aktie(0, 6102, "BASF", 1, istKurs1 ? 6127 : 8439));
+		dax.add(new Aktie(0, 8925, "MAN", 1, istKurs1 ? 8824 : 8267));
+		dax.add(new Aktie(0, 9710, "Siemens", 1, istKurs1 ? 9678 : 9513));
+		dax.add(new Aktie(0, 4500, "Daimler", 1, istKurs1 ? 4993 : 4512));
+		dax.add(new Aktie(0, 5800, "BMW", 1, istKurs1 ? 5867 : 5756));
+		dax.add(new Aktie(0, 11032, "Volkswagen", 1, istKurs1 ? 11550 : 12050));
+		Aktienfonds indexFonds = new Aktienfonds(0, 58149, "DAX", 300, dax);
+
+		vg.add(indexFonds);
+
+		try {
+			vg.add(new Immobilie(0, 100000000, "Villa", 20));
+		} catch (ImmobilieExistiertException e) {
+			e.printStackTrace();
+		}
+
+		vg.add(new Festgeld(0, 10000000, "Sparkasse", 1, 3, 2.0));
+
+		Aktie a = new Aktie(0, 6102, "BASF", 1, istKurs1 ? 6127 : 8439);
+		vg.add(new Calloption(0, 500, "Call BASF", 10000, 0, 10, 6000, a));
+
+		a = new Aktie(0, 8925, "MAN", 1, istKurs1 ? 8824 : 8267);
+		vg.add(new Calloption(0, 100, "Call MAN", 5000, 0, 10, 8800, a));
+
+		a = new Aktie(0, 8925, "MAN", 1, istKurs1 ? 8824 : 8267);
+		vg.add(new Putoption(0, 200, "Put MAN", 5000, 0, 10, 8500, a));
+
+		a = new Aktie(0, 4500, "Daimler", 1, istKurs1 ? 4993 : 4512);
+		vg.add(new Putoption(0, 300, "Put Daimler", 5000, 0, 10, 4700, a));
+
+		return new Portfolio(vg);
+
+	}
+
+	private static Portfolio createPortfolioB(boolean istKurs1) {
+
+		List<Aktie> dax = new ArrayList<Aktie>();
+		dax.add(new Aktie(0, 11500, "Münchener Rück", 1, istKurs1 ? 11110
+				: 12030));
+		dax.add(new Aktie(0, 6102, "BASF", 1, istKurs1 ? 6127 : 8439));
+		dax.add(new Aktie(0, 8925, "MAN", 1, istKurs1 ? 8824 : 8267));
+		dax.add(new Aktie(0, 9710, "Siemens", 1, istKurs1 ? 9678 : 9513));
+		dax.add(new Aktie(0, 4500, "Daimler", 1, istKurs1 ? 4993 : 4512));
+		dax.add(new Aktie(0, 5800, "BMW", 1, istKurs1 ? 5867 : 5756));
+		dax.add(new Aktie(0, 11032, "Volkswagen", 1, istKurs1 ? 11550 : 12050));
+
+		List<Aktie> automobil = new ArrayList<Aktie>();
+		automobil.add(new Aktie(0, 4500, "Daimler", 4, istKurs1 ? 4993 : 4512));
+		automobil.add(new Aktie(0, 5800, "BMW", 3, istKurs1 ? 5867 : 5756));
+		automobil.add(new Aktie(0, 11032, "Volkswagen", 5, istKurs1 ? 11550
+				: 12050));
+
+		List<Vermoegensgegenstand> vg = new ArrayList<Vermoegensgegenstand>();
+		vg.add(new Aktie(0, 6102, "BASF", 2000, istKurs1 ? 6127 : 8439));
+		vg.add(new Aktie(0, 8925, "MAN", 240, istKurs1 ? 8824 : 8267));
+		vg.add(new Aktie(0, 9710, "Siemens", 400, istKurs1 ? 9678 : 9513));
+		vg.add(new Aktie(0, 11032, "VW", 600, istKurs1 ? 11550 : 12050));
+		vg.add(new Aktienfonds(0, 58149, "DAX", 500, dax));
+		vg.add(new Aktienfonds(0, 95000, "Automobil", 200, automobil));
+		vg.add(new Rentenpapier(0, 5000000, "Bundes", 1, 10, 1.5, 5200000));
+		vg.add(new Festgeld(0, 8000000, "Sparkasse", 1, 3, 2.0));
+
 		return new Portfolio(vg);
 	}
-	
-	//optionen
-	private static final Aktie basfCall = new Aktie(0, 6000,"Basf" , 1, 500);
-	private static final Aktie daimlerPut = new Aktie(0, 4700, "Daimler", 1, 300);
-	private static final Aktie manCall = new Aktie(0, 8800, "MAN", 1, 100);
-	private static final Aktie manPut = new Aktie(0, 8500, "MAN", 1, 200);
-	
-	//Portfolio1
-	private static final Aktie basf = new Aktie(0, 6102, "Basf", 1000, 500);
-	private static final Aktie man = new Aktie(0, 8925, "MAN", 240, 300);
-	//Fonds
-	private static final Aktie fond = new Aktie(0, 58149, "DAX", 300, 100);
-	//Villa
-	private static final Immobilie Villa1(int kaufdatum)
-			throws ImmobilieExistiertException {
-		return new Immobilie(kaufdatum, 1000000, "Villa 1",
-				20);}
-	//Festgeld
-	private static final Festgeld festgeld = new Festgeld(0, 100000, "Festgeld", 1,20, 2);
-	//Optionen
-	private static final Aktie basfCallOption = new Aktie(0, 6000, "Basf", 10000, 500);
-	private static final Aktie manCallOption = new Aktie(0, 8800, "MAN", 5000, 100);
-	private static final Aktie manPutOption = new Aktie(0, 8500, "MAN", 5000, 200);
-	private static final Aktie daimlerPutOption = new Aktie(0, 4700, "MAN", 5000, 300);
-	
-	//Portfolio2
-	private static final Aktie basf2 = new Aktie(0, 6102, "Basf", 2000, 500);
-	private static final Aktie man2 = new Aktie(0, 8925, "MAN", 240, 100);
-	private static final Aktie siemens = new Aktie(0, 9710, "MAN", 400, 0);
-	private static final Aktie vw = new Aktie(0, 11032, "MAN", 600, 0);
-	
 
 	
 	
