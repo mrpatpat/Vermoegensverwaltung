@@ -6,6 +6,9 @@ import java.util.List;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.portfolio.Portfolio;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.aktien.Aktie;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.festgelder.Festgeld;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.immobilien.Immobilie;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.immobilien.ImmobilieExistiertException;
 
 public class Simulation {
 
