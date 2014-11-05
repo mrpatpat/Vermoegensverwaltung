@@ -20,19 +20,25 @@ public class Simulation {
 			"MAN", "SIEMENS", "DAIMLER", "BMW", "VOLKSWAGEN" };
 
 	public static void main(String[] args) {
+		System.out.println("test");
+	}
 
+	private static final Immobilie createSchlossAllee(int kaufdatum)
+			throws ImmobilieExistiertException {
+		return new Immobilie(kaufdatum, 1000000, "Schlossallee 4, Heidelberg",
+				20);
 	}
-	
-	private static final Immobilie createSchlossAllee(int kaufdatum) throws ImmobilieExistiertException {
-		return new Immobilie(kaufdatum, 1000000, "Schlossallee 4, Heidelberg", 20);
+
+	private static Festgeld createSparkassenAnlage(int kaufdatum,
+			long kaufpreis, int anzahl, long kurs) {
+		return new Festgeld(kaufdatum, kaufpreis, "Sparkasse Mannheim", anzahl,
+				3, 2.0d);
 	}
-	
-	private static Festgeld createSparkassenAnlage(int kaufdatum, long kaufpreis, int anzahl, long kurs){
-		return new Festgeld(kaufdatum, kaufpreis,"Sparkasse Mannheim", anzahl, 3, 2.0d);
-	}
-	
-	private static Rentenpapier createBundesschatzbrief(int kaufdatum, long kaufpreis, int anzahl, long kurs){
-		return new Rentenpapier(kaufdatum, kaufpreis,"Bundesschatzbrief", anzahl, 10, 1.5d , kurs);
+
+	private static Rentenpapier createBundesschatzbrief(int kaufdatum,
+			long kaufpreis, int anzahl, long kurs) {
+		return new Rentenpapier(kaufdatum, kaufpreis, "Bundesschatzbrief",
+				anzahl, 10, 1.5d, kurs);
 	}
 
 	private static Aktienfonds createAutofonds() {
@@ -40,10 +46,10 @@ public class Simulation {
 
 		liste.add(createAktie(4, 0, 500, 4, true));
 		liste.add(createAktie(4, 0, 500, 4, false));
-		
+
 		liste.add(createAktie(3, 0, 500, 5, true));
 		liste.add(createAktie(3, 0, 500, 5, false));
-		
+
 		liste.add(createAktie(5, 0, 500, 6, true));
 		liste.add(createAktie(5, 0, 500, 6, false));
 
