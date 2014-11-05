@@ -4,6 +4,17 @@ import java.util.List;
 
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 
+/**
+ * Erstellung einer Abstraktenklasse für die Fonds
+ * erbt von Vermoegensgegenstand
+ * 
+ * @author Adrian, Marcel und Felix
+ *
+ * @param <T>
+ * 
+ * date 5.11.2014
+ */
+
 abstract class Fonds<T extends Vermoegensgegenstand> extends Vermoegensgegenstand {
 
 	private final List<T> vermoegensgegenstaende;
