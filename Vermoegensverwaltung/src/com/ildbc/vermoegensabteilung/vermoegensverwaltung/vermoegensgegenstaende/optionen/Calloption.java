@@ -13,6 +13,19 @@ import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende
  */
 
 public class Calloption extends Option {
+	
+	/**
+	 * Konstrukteur für die Calloptionen
+	 * 
+	 * @param kaufdatum
+	 * @param kaufpreis
+	 * @param name
+	 * @param anzahl
+	 * @param startdatum
+	 * @param dauer
+	 * @param ausuebungspreis
+	 * @param basiswert
+	 */
 
 	public Calloption(int kaufdatum, long kaufpreis, String name, int anzahl, int startdatum, int dauer, int ausuebungspreis, Aktie basiswert) {
 		super(kaufdatum, kaufpreis, name, anzahl, startdatum, dauer, ausuebungspreis, basiswert);
