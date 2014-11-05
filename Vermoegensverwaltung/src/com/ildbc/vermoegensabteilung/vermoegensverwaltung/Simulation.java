@@ -3,9 +3,11 @@ package com.ildbc.vermoegensabteilung.vermoegensverwaltung;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.aktien.Aktie;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.festgelder.Festgeld;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.fonds.Aktienfonds;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.immobilien.Immobilie;
+import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.immobilien.ImmobilieExistiertException;
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.rentenpapiere.Rentenpapier;
 
 public class Simulation {
@@ -14,11 +16,19 @@ public class Simulation {
 			{ 6127, 8439 }, { 8824, 8267 }, { 9678, 9513 }, { 4993, 4512 },
 			{ 5867, 5756 }, { 11550, 12050 } };
 
-	private static final String[] aktienNamen = { "Münchener Rück", "BASF",
+	private static final String[] aktienNamen = { "Muenchener Rueck", "BASF",
 			"MAN", "SIEMENS", "DAIMLER", "BMW", "VOLKSWAGEN" };
 
 	public static void main(String[] args) {
 
+	}
+	
+	private static final Immobilie createSchlossAllee(int kaufdatum) throws ImmobilieExistiertException {
+		return new Immobilie(kaufdatum, 1000000, "Schlossallee 4, Heidelberg", 20);
+	}
+	
+	private static Festgeld createSparkassenAnlage(int kaufdatum, long kaufpreis, int anzahl, long kurs){
+		return new Festgeld(kaufdatum, kaufpreis,"Sparkasse Mannheim", anzahl, 3, 2.0d);
 	}
 	
 	private static Rentenpapier createBundesschatzbrief(int kaufdatum, long kaufpreis, int anzahl, long kurs){

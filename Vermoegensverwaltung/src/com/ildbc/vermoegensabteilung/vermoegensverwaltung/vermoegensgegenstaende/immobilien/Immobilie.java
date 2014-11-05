@@ -13,13 +13,14 @@ public class Immobilie extends Vermoegensgegenstand {
 
 	private int abschreibungsdauer;
 
-	public Immobilie(int kaufdatum, long kaufpreis, String name) throws ImmobilieExistiertException {
+	public Immobilie(int kaufdatum, long kaufpreis, String name, int abschreibungsdauer) throws ImmobilieExistiertException {
 		super(kaufdatum, kaufpreis, name, Immobilie.MAX_ANZAHL_INSTANZEN);
 		
 		if(Immobilie.immobilieExistiert(name)){
 			throw new ImmobilieExistiertException();
 		} else {
 			Immobilie.addImmobilie(name);
+			this.abschreibungsdauer = abschreibungsdauer;
 		}
 		
 	}
