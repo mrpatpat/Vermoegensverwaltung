@@ -3,21 +3,19 @@ package com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaend
 import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende.Vermoegensgegenstand;
 
 /**
- * Representation des Festgeld 
- * Klasse erbt von Vermoegensgegenstand
- * Kapital * (1+p/100)^laufzeit
- * Endwert wird erst am Ende der Laufzeit angegeben
+ * Representation des Festgeld Klasse erbt von Vermoegensgegenstand Kapital *
+ * (1+p/100)^laufzeit Endwert wird erst am Ende der Laufzeit angegeben
  * 
  * @author Adrian, Marcel und Felix
  * 
- *date 5.11.2014
+ *         date 5.11.2014
  */
 
 public class Festgeld extends Vermoegensgegenstand {
 
 	private final int laufzeit;
 	private final double zins;
-	
+
 	/**
 	 * Konstuktuer mit den Eigenschaften der Vermoegenstand
 	 * 
@@ -29,8 +27,9 @@ public class Festgeld extends Vermoegensgegenstand {
 	 * @param zins
 	 */
 
-	public Festgeld(int kaufdatum, long kaufpreis, String name, int anzahl, int laufzeit, double zins) {
-		super(kaufdatum,kaufpreis,name,anzahl);
+	public Festgeld(int kaufdatum, long kaufpreis, String name, int anzahl,
+			int laufzeit, double zins) {
+		super(kaufdatum, kaufpreis, name, anzahl);
 		this.laufzeit = laufzeit;
 		this.zins = zins;
 	}
@@ -40,17 +39,17 @@ public class Festgeld extends Vermoegensgegenstand {
 	 * 
 	 * @return long
 	 */
-	
+
 	public long getEndwert() {
-		
-		double a = 1 + (zins/100d);
+
+		double a = 1 + (zins / 100d);
 		a = Math.pow(a, laufzeit);
 		a *= getKaufpreis();
-		
-		return (long)a;
-		
-	} 
-	
+
+		return (long) a;
+
+	}
+
 	/**
 	 * Gibt den Typ an
 	 */
@@ -59,7 +58,7 @@ public class Festgeld extends Vermoegensgegenstand {
 	public String getTyp() {
 		return "Festgeld";
 	}
-	
+
 	/**
 	 * Zeitwert wird angegeben
 	 */
@@ -67,6 +66,17 @@ public class Festgeld extends Vermoegensgegenstand {
 	@Override
 	public long getZeitwert(int datum) {
 		return getKaufpreis();
+	}
+
+	public double getZins() {
+
+		return zins;
+
+	}
+
+	public int getLaufzeit() {
+		
+		return laufzeit;
 	}
 
 }
