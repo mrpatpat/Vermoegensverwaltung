@@ -9,6 +9,8 @@ import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende
  * Klasse Rentenfonds
  * erbt von Fonds
  * 
+ * mit der Hilfe von java generics
+ * 
  * @author Adrian, Marcel und Felix
  *
  * date 5.11.2014

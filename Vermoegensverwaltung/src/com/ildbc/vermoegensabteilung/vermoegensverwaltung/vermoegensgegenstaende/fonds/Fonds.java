@@ -8,6 +8,8 @@ import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende
  * Erstellung einer Abstraktenklasse für die Fonds
  * erbt von Vermoegensgegenstand
  * 
+ * mit der Hilfe von java generics
+ * 
  * @author Adrian, Marcel und Felix
  *
  * @param <T>
