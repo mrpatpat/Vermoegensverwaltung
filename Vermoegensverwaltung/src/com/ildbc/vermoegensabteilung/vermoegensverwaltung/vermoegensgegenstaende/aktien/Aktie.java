@@ -15,28 +15,58 @@ import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende
 public class Aktie extends Vermoegensgegenstand implements Handelbar {
 
 	private long kurs;
+	
+	/**
+	 * Konstrukteur für die Aktie
+	 * 
+	 * @param kaufdatum
+	 * @param kaufpreis
+	 * @param name
+	 * @param anzahl
+	 * @param kurs
+	 */
 
 	public Aktie(int kaufdatum, long kaufpreis, String name, int anzahl,long kurs) {
 		super(kaufdatum,kaufpreis,name,anzahl);
 		this.kurs = kurs;
 	}
 	
+	/**
+	 * Kurs setzen
+	 */
+	
 	public void setKurs(long kurs){
 		this.kurs = kurs;
 	}
 
+	/**
+	 * Aktuellen Wert bekommen
+	 */
+	
 	public long getZeitwert(int zeit) {
 		return getKurs();
 	}
 
+	/**
+	 * Aktueller Kurs
+	 */
+	
 	public long getKurs() {
 		return kurs;
 	}
+	
+	/**
+	 * Typ des Vermögengegestand
+	 */
 
 	@Override
 	public String getTyp() {
 		return "Aktie";
 	}
+	
+	/**
+	 * Ationen die man benutzen kann mit den Aktien
+	 */
 
 	public void verkaufen() {
 		//nicht angegeben, aber gefordert
