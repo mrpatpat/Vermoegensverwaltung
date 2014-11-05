@@ -83,6 +83,29 @@ public class Portfolio {
 	public long getBilanz(int datum) {
 		return this.getZeitwert(datum) - this.getGesamtinvestition();
 	}
+	@Override
+	public String toString() {
+
+	String s = new String(
+	"Typ\t\t\tName\t\t\tAnzahl\t\tStueckpreis\n"
+	+ "********************"
+	+ "***************************************************************\n");
+	for (int i = 0; i < getVermoegenswerte().size(); i++) {
+	s += getVermoegenswerte().get(i).getTyp() + " \t\t";
+	s += getVermoegenswerte().get(i).getName()
+	+ (getVermoegenswerte().get(i).getName().length() > 10 ? " "
+	: " \t") + "\t";
+	s += getVermoegenswerte().get(i).getAnzahl() + "\t\t";
+	s += getVermoegenswerte().get(i).getKaufpreis()
+	/ 100
+	+ ","
+	+ (getVermoegenswerte().get(i).getKaufpreis() % 100 < 10 ? "0"
+	: "") + getVermoegenswerte().get(i).getKaufpreis()
+	% 100 + "\n";
+
+	}
+
+	return s;}
 
 	@Override
 	public String toString() {

@@ -23,9 +23,8 @@ public class FestgeldTest {
 		assertEquals(1, b.getAnzahl());
 		assertEquals(1, c.getAnzahl());
 		
-		//wieso??
-		//assertEquals(2.00, b.getZins());
-		//assertEquals(2.00, c.getZins());
+		assertEquals(2.0, b.getZins(), 0);
+		assertEquals(2.0, c.getZins(), 0);
 		
 	}
 
