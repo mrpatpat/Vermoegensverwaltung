@@ -18,11 +18,28 @@ import com.ildbc.vermoegensabteilung.vermoegensverwaltung.vermoegensgegenstaende
 abstract class Fonds<T extends Vermoegensgegenstand> extends Vermoegensgegenstand {
 
 	private final List<T> vermoegensgegenstaende;
+	
+	/**
+	 * Konstrukteur des Fonds
+	 * 
+	 * @param kaufdatum
+	 * @param kaufpreis
+	 * @param name
+	 * @param anzahl
+	 * @param vermoegensgegenstaende
+	 */
 
 	public Fonds(int kaufdatum, long kaufpreis, String name, int anzahl, List<T> vermoegensgegenstaende) {
 		super(kaufdatum, kaufpreis, name, anzahl);
 		this.vermoegensgegenstaende = vermoegensgegenstaende;
 	}
+	
+	/**
+	 * die verschiedenen Vermögenswerten werden auf summiert
+	 * und zurück gegeben
+	 *
+	 * @return long
+	 */
 
 	public long getZeitwert(int datum) {
 		long summe = 0;
